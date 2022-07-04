@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+header a{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;  /* removes  ____ */
+    color: #15b1e1;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: .8;
+
+}
+
+header div {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-between;
+}
