@@ -2,26 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="css" href="./assets/css/style.css">
     <title>Timed Quiz</title>
 </head>
+
 <body>
     <header id="header">
-        <div>
+        <div class="top">
             <a href="./high-scores.html">View High Scores</a>
-            <h1 id="timeInterval">Time-interval</h1>
+            <div class="timer" id="countdown">
+                <h3>Timer:</h3>
+            </div>
         </div>
-
-        <main>
-            <div>Question1</div>
-            <div>Question2</div>
-            <div>Question3</div>
-            <div>Question4</div>
-            <div>Question5</div>
-        </main>
-
     </header>
+
+    <main class="main" id="mainContainer">
+        <h1>
+            Coding Quiz Challenge
+            <h3> Try to answer the following code-related questions within the time limit. <br>
+                Keep in mind that incorrect answers will penalize your score/time<br>
+                by ten seconds!</h3> 
+        </h1>
+        
+        <button id="btn-start">Start Quiz</button>
+    
+        <div id="Initials">
+            <p>Initials</p>
+        </div>
+        
+        <button id="btn1"></button>
+        <button id="btn2"></button>
+        <button id="btn3"></button>
+        <button id="btn4"></button>
+        <button id="btn5"></button>
+    </main>
+
 </body>
 </html>
