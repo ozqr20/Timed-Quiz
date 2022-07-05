@@ -1,5 +1,12 @@
 var headerVar = document.getElementById("header");
-var countDownVar = document.getElementById("countdown")
+var countDownVar = document.getElementById("countdown");
+var btnStartVar = document.getElementById("btn-start");
+var initialsVar = document.getElementById("initials");
+var btn1Var = document.getElementById("btn1");
+var btn2Var = document.getElementById("btn2");
+var btn3Var = document.getElementById("btn3");
+var btn4Var = document.getElementById("btn4");
+var finalScoreVar = document.getElementById("final-score");
 console.log(countDownVar);
 
 var questions = [
