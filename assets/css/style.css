@@ -68,6 +68,6 @@ main h3{
     
 }
 
-#btn1, #btn2, #btn3, #btn4, #btn5{
+.hideElement{
     display: none;
 }

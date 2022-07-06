@@ -1,5 +1,5 @@
 var headerVar = document.getElementById("header");
-var countDownVar = document.getElementById("countdown");
+var countDownVar = document.getElementById("countdown");  // done
 var btnStartVar = document.getElementById("btn-start");
 var initialsVar = document.getElementById("initials");
 var btn1Var = document.getElementById("btn1");
@@ -7,8 +7,15 @@ var btn2Var = document.getElementById("btn2");
 var btn3Var = document.getElementById("btn3");
 var btn4Var = document.getElementById("btn4");
 var finalScoreVar = document.getElementById("final-score");
+var mainContainerVar = document.getElementById("mainContainer");
+var startQuizVar = document.getElementById("startQuiz")
+var time = 75;
+var questionsArr = document.getElementById("showQuestions");
 console.log(countDownVar);
 
+
+
+console.log(document.getElementsByTagName("question"));
 var questions = [
     {
         question: "What's the short cut to create a default page in HTML?",
@@ -63,5 +70,35 @@ var questions = [
 
 ];
 
+function countDown (time){
+
+    var timeInterval = setInterval(function(){
+        
+        if(time > 0){
+            countDownVar.textContent = time;
+            time--;             
+        }
+
+    }, 1000);
+}
+
+btnStartVar.addEventListener("click", function(){
+
+    btnStartVar.setAttribute("disabled","true"); // disable btn so the timer does not goes up and down in value, only strings
+    countDown(time);
+    startQuizVar.setAttribute("class","hideElement"); // disable btn so the timer does not goes up and down in value, only strings
+    questionsArr.removeAttribute("class");
+    arrayQuestions();
+});
+
+function arrayQuestions(questions){
+
+
+}
+
 console.log(questions);
-// array of 10 displayed
+
+
+
+
+

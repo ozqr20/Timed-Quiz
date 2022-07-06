@@ -12,30 +12,35 @@
     <header id="header">
         <div class="top">
             <a href="./high-scores.html">View High Scores</a>
-            <div class="timer" id="countdown">
-                <h3>Timer: </h3>
+            <div class="timer" >
+                <h3>Timer: <span id="countdown"></span></h3>
             </div>
         </div>
     </header>
 
     <main class="main" id="mainContainer">
-        <h1>
-            Coding Quiz Challenge
-            <h3> Try to answer the following code-related questions within the time limit. <br>
-                Keep in mind that incorrect answers will penalize your score/time<br>
-                by ten seconds!</h3> 
-        </h1>
-        
-        <button id="btn-start">Start Quiz</button>
-    
+        <div id="startQuiz">
+            <h1>
+                Coding Quiz Challenge
+                <h3> Try to answer the following code-related questions within the time limit. <br>
+                    Keep in mind that incorrect answers will penalize your score/time<br>
+                    by ten seconds!</h3> 
+            </h1>
+            
+            <button id="btn-start">Start Quiz</button>
+        </div> 
+
+        <div class="hideElement" id="showQuestions">
+            <h2 id="question"></h2>
+            <div id="response">
+                <!-- <question>1</question>
+                <question>2</question>
+                <question>3</question>
+                <question>4</question> -->
+            </div>
+        </div>
+
         <div id="initials"></div>
-
-        <!-- Questions will be inside these buttons-->
-        <button id="btn1"></button>
-        <button id="btn2"></button>
-        <button id="btn3"></button>
-        <button id="btn4"></button>
-
         <div id="final-score"></div>
     </main>
 
