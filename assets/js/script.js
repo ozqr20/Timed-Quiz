@@ -15,7 +15,6 @@ var initialsVar = document.getElementById("initials");
 var finalScoreVar = document.getElementById("final-score");
 var scoresContainerVar = document.getElementById("scoresContainer");
 var questionsArr = document.getElementById("showQuestions");
-var otherCount = 0;
 var cycleVar = false;
 var data = '';
 
@@ -74,28 +73,7 @@ var questionsArr = [
 
 ];
 
-
-// function countDown (time){
-
-//     var timeInterval = setInterval(function(){
-        
-//         if(time > 0){
-//             countDownVar.textContent = time;
-//             time--;             
-//         }
-
-//     }, 1000);
-// }
 var lengthArr = questionsArr.length;
-
-// btnStartVar.addEventListener("click", function(){
-
-//     btnStartVar.setAttribute("disabled","true");
-//     countDown(time);
-//     startQuizVar.setAttribute("class","hideElement"); // disable btn so the timer does not goes up and down in value, only string as parameters 
-//     questionsArr.removeAttribute("class");  // remove the class so it will display the rest of the containers after
-//     showQuestions();
-// });
 
 function quizStart(){
 
@@ -122,9 +100,9 @@ function quizStart(){
     startBtn.addEventListener('click', start)   
     mainContainerVar.appendChild(startBtn);
 
-    var result = document.createElement("h2");
-    result.className = "result";
-    mainContainerVar.appendChild(result);
+    var finalScoreVar = document.createElement("h2");
+    finalScoreVar.className = "final-score";
+    mainContainerVar.appendChild(finalScoreVar); 
 
 }
 
@@ -187,18 +165,17 @@ function showQuestions(){
 
 
 var checkQuestion = function(num,indexVar){
-    if(num === questionsArr[indexVar].correct){
-        console.log('correct answer', num, indexVar);
-        var result = document.createElement('h2');
-        result.textContent = 'Correct';
-        result.className = 'result';
-        mainContainerVar.appendChild(result);
-        total = parseInt(total) + 1;
+    if(num === questionsArr[indexVar].answer){
+        var results = document.createElement('h3');
+        results.textContent = 'Correct';
+        results.className = 'final-score';
+        mainContainerVar.appendChild(results);
+        points = parseInt(points) + 1;
     } else {
-        var wrongVar = document.createElement('h2');
-        wrongVar.textContent = "Wrong";
-        wrongVar.className = 'result';
-        mainContainerVar.appendChild(wrongVar);
+        var finalScoreVar = document.createElement('h3');
+        finalScoreVar.textContent = "Wrong";
+        finalScoreVar.className = 'final-score';
+        mainContainerVar.appendChild(finalScoreVar);
         time -= 10;
     }
     cycleVar = true;
@@ -209,6 +186,7 @@ var responseClick = function(event){
     var answer = event.target;
     if(event.target.id === "btn-1"){
         checkQuestion(0,indexVar);
+        console.log(checkQuestion());
     }
     if (event.target.id === "btn-2") {
         checkQuestion(1, indexVar)
@@ -219,7 +197,6 @@ var responseClick = function(event){
     if (event.target.id === "btn-4") {
         checkQuestion(3, indexVar)
     }
-    console.log('responseClick', event.target.id);
 }
 
 function gameover(){
@@ -232,11 +209,11 @@ function gameover(){
     startQuiz.className = 'h2';
     mainContainerVar.appendChild(startQuiz);
 
-    var initials = document.createElement("input")
-    initials.className = 'input';
-    initials.setAttribute("id", "init");
-    initials.setAttribute("name", "initial");
-    mainContainerVar.appendChild(initials);
+    var initialsVar = document.createElement("input")
+    initialsVar.className = 'input';
+    initialsVar.setAttribute("id", "init");
+    initialsVar.setAttribute("name", "initial");
+    mainContainerVar.appendChild(initialsVar);
 
     var btn1 = document.createElement("button");
     btn1.textContent = "Submit Score and Initials"
@@ -246,7 +223,7 @@ function gameover(){
 }
 
 function highScore () {
-    var data = document.querySelector("input[name='initial']").value;
+    var data = document.querySelector("input[name='initialsVar']").value;
 
     if(data === "" || isNaN(data) || data.length > 2 || data.length < 2) {
         alert("Wrong input")
@@ -258,8 +235,8 @@ function highScore () {
         }
         var scoreSaved = JSON.parse(localStorage.getItem("scorePoints")) ?? [];
         scoreSaved.push(scoreObj);
-        console.log(localStorage["scorePoints"] = JSON.stringify(scoreSaved));
-        
+        console.log(scoreSaved);
+        localStorage['scorePoints'] = JSON.stringify(scoreSaved);
         window.location.href="./high-scores.html";
     }
 }
