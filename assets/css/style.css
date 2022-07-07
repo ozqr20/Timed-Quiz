@@ -55,6 +55,12 @@ main h3{
     
 }
 
+#startQuiz {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 #btn-start{
     display: flex;
     text-align: center;
@@ -65,8 +71,9 @@ main h3{
     cursor: pointer;
     font-size: 20px;
     width: 10%;
-    
+    padding: 10px;
 }
+
 
 .hideElement{
     display: none;
