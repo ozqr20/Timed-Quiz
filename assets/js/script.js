@@ -48,7 +48,7 @@ var questionsArr = [
     {
         question: "What's the correct way to display an image in css?",
         choices: ["<img...", "background-image:url('...')","padding: ...", "display-img"],
-        answer: 2
+        answer: 1
     },
     {
         question: "What DOM stands for in JavaScript?",
