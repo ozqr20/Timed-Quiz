@@ -5,8 +5,10 @@ var scorePoints = [];
 var headerVar = document.getElementById("header");
 var countDown = document.getElementById("countdown");
 var mainContainerVar = document.getElementById("mainContainer"); // div main
-var startQuizVar = document.getElementById("startQuiz"); // h1 for text 
-var btnStartVar = document.getElementById("btn-start"); 
+var startQuiz = document.getElementById("startQuiz"); // h1 for text 
+var startBtn = document.getElementById("btn-start"); 
+
+
 var btn1Var = document.getElementById("btn-1");
 var btn2Var = document.getElementById("btn-2");
 var btn3Var = document.getElementById("btn-3");
@@ -56,7 +58,7 @@ var questionsArr = [
         answer: 0
     },
     {
-        question: "How can you display the color inside this code :root {--primary-color=#fce138}?",
+        question: "How can you display the color after this declaration in a CSS file :root {--primary-color=#fce138}?",
         choices: ["var(primary-color);","var(--primary-color);","var(-primary-color);", "primary-color();"],
         answer: 1
     },
@@ -95,7 +97,7 @@ function quizStart(){
     mainContainerVar.appendChild(startQuiz);
 
     var startBtn = document.createElement("button");
-    startBtn.textContent = "Let's Begin";
+    startBtn.textContent = "StartQuiz";
     startBtn.className = "btn";
     startBtn.addEventListener('click', start)   
     mainContainerVar.appendChild(startBtn);
@@ -213,11 +215,13 @@ function gameover(){
     initialsVar.className = 'input';
     initialsVar.setAttribute("id", "init");
     initialsVar.setAttribute("name", "initial");
+    initialsVar.setAttribute("placeholder", "Initials")
     mainContainerVar.appendChild(initialsVar);
 
     var btn1 = document.createElement("button");
     btn1.textContent = "Submit Score and Initials"
     btn1.className = "btn small";
+    btn1.setAttribute("id", "btn-1");
     btn1.addEventListener('click', highScore);
     mainContainerVar.appendChild(btn1);
 }
@@ -225,7 +229,7 @@ function gameover(){
 function highScore () {
     var data = document.querySelector("input[name='initialsVar']").value;
 
-    if(data === "" || isNaN(data) || data.length > 2 || data.length < 2) {
+    if(data === "" || !isNaN(data) || data.length > 2 || data.length < 2) {
         alert("Wrong input")
     } else{
 

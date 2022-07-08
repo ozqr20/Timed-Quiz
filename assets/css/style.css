@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 500;
 }
 
 body {
     background-size: cover;
     align-items: center;
-    font: arial;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: hsla(68, 79%, 96%, 0.377);
+    background-image: url("../images/bluelightbg.jpg");
 }
 
 /*High scores class*/
@@ -39,21 +41,26 @@ header a {
 }
 
 main {
-    padding-top: 60px;
+    padding-top: 20px;
     display: flex;
     font-size: 20px;
     align-items: center;
     flex-direction: column;
     background-color: transparent;
     width: 100%;
+    padding-bottom: 50px;
 }
 
-.h3{
-    padding-top: 30px;
+.h3, .h2{
+    padding-top: 1rem;
     text-align: center;
     align-items: center;
     font-weight: bold;
-    font: 2rem;;
+    width: 70%;
+}
+.h1{
+    font-weight: bold;
+    opacity: .9;
 }
 
 header h3{
@@ -69,23 +76,29 @@ header h3{
 }
 
 span{
-    color: #ff550064;
+    color: hsla(20, 84%, 5%, 0.974);
+    font-weight: 600;
 }
 
 .input {
-    width: 9rem;
-    padding: .25rem;
-    font-size: 2rem;
+    width: 7rem;
+    padding: 0.75rem;
+    font-size: 1rem;
     border-radius: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    text-align: center;
 }
-.btn {
-    width: 15rem;
+.btn{
+    width: 12rem;
     padding: 0.65rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 2rem;
     margin-top: 1.5rem;
-    background-color: rgba(190, 209, 18, 0.363);
+    background-color: hsla(135, 100%, 53%, 0.693);
+    opacity: .9;
+}
+nav a:hover{
+    color:hsla(135, 100%, 53%, 0.693);
 }
 
 .small {
@@ -93,6 +106,4 @@ span{
     text-align: center;
 }
 
-.hideElement{
-    display: none;
-}
+
