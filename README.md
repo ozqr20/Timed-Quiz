@@ -15,6 +15,8 @@
 ## Missing implementation 
 * The buttom to go the high scores does not work
 
-* Link to web page https://ozqr20.github.io/Timed-Quiz/
+
+
+##### Link to web page https://ozqr20.github.io/Timed-Quiz/
 
 ![Screenshot (954)](https://user-images.githubusercontent.com/53874145/177913248-3971d095-e9b9-4c4f-8da7-a0bef333c982.png)
